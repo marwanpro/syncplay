@@ -475,7 +475,7 @@ class MPCHCAPIPlayer(BasePlayer):
     
     @staticmethod
     def getIconPath(path):
-        if MPCHCAPIPlayer.getExpandedPath(path).lower().endswith(u'mpc-hc64.exe'.lower()):
+        if MPCHCAPIPlayer.getExpandedPath(path).lower().endswith(u'mpc-be64.exe'.lower()):
             return constants.MPC64_ICONPATH
         else:
             return constants.MPC_ICONPATH
@@ -489,17 +489,17 @@ class MPCHCAPIPlayer(BasePlayer):
     @staticmethod
     def getExpandedPath(path):
         if os.path.isfile(path):
-            if path.lower().endswith(u'mpc-hc.exe'.lower()) or path.lower().endswith(u'mpc-hc64.exe'.lower()):
+            if path.lower().endswith(u'mpc-be.exe'.lower()) or path.lower().endswith(u'mpc-be64.exe'.lower()):
                 return path
-        if os.path.isfile(path + u"mpc-hc.exe"):
-            path += u"mpc-hc.exe"
+        if os.path.isfile(path + u"mpc-be.exe"):
+            path += u"mpc-be.exe"
             return path
-        if os.path.isfile(path + u"\\mpc-hc.exe"):
-            path += u"\\mpc-hc.exe"
+        if os.path.isfile(path + u"\\mpc-be.exe"):
+            path += u"\\mpc-be.exe"
             return path
-        if os.path.isfile(path + u"mpc-hc64.exe"):
-            path += u"mpc-hc64.exe"
+        if os.path.isfile(path + u"mpc-be64.exe"):
+            path += u"mpc-be64.exe"
             return path
-        if os.path.isfile(path + u"\\mpc-hc64.exe"):
-            path += u"\\mpc-hc64.exe"
+        if os.path.isfile(path + u"\\mpc-be64.exe"):
+            path += u"\\mpc-be64.exe"
             return path
